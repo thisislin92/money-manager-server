@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Transfer Online ke Rekening 123123123",
+    "amount": 105500.5,
+    "type": "expense",
+    "transactionDateTime": "2023-01-11 00:03:09.850 +0700",
+    "CategoryId": 1,
+    "WalletId": 1
+  }
+]
