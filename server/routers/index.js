@@ -1,5 +1,6 @@
 const allRouters = require('express').Router()
 const categoryRouter = require('./categoryRouter')
+const nodemailerRouter = require('./nodemailerRouter')
 const transactionRouter = require('./transactionRouter')
 const userRouter = require('./userRouter')
 const walletRouter = require('./walletRouter')
@@ -7,4 +8,5 @@ allRouters.use(categoryRouter)
 allRouters.use(userRouter)
 allRouters.use(transactionRouter)
 allRouters.use(walletRouter)
+allRouters.use(nodemailerRouter)
 module.exports = allRouters

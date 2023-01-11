@@ -8,7 +8,7 @@ transactionRouter.get(
   Controller.getAllTransactions
 );
 transactionRouter.post("/transactions", authentication,Controller.createTransactions);
-transactionRouter.get("/transactions/:id", Controller.getTransactionsById);
+transactionRouter.get("/transactions/:id", authentication, Controller.getTransactionsById);
 transactionRouter.patch(
   "/transactions/:id",
   authentication,
