@@ -83,6 +83,55 @@ class Controller {
       next(error);
     }
   }
+  static async facebookSignIn(req, res, next) {
+    try {
+      let { authorization: tokenFromFacebook } = req.headers;
+      tokenFromFacebook = tokenFromFacebook.split(" ")[1];
+      const client = new OAuth2Client(`${process.env.GOOGLE_OAUTH_CLIENT_ID}`);
+
+      async function verify() {
+        const ticket = await client.verifyIdToken({
+          idToken: tokenFromFacebook,
+          audience: `${process.env.GOOGLE_OAUTH_CLIENT_ID}`, // Specify the CLIENT_ID of the app that accesses the backend
+          // Or, if multiple clients access the backend:
+          //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+        });
+        const payload = ticket.getPayload();
+        return payload
+        // If request specified a G Suite domain:
+        // const domain = payload['hd'];
+      }
+      const profileResponse = await verify().catch((error) => {
+        next(error);
+      });
+
+      const { email, name } = profileResponse;
+      let userLogin = await User.findOne({ where: { email } });
+      if (!userLogin) {
+        userLogin = await User.create({
+          username: name,
+          email,
+          password: "facebooklogin-default-password", // TODO: need mechanism to handle google login's password
+          role: "staff",
+          phoneNumber: "",
+          address: "",
+        });
+      }
+
+      // directly allow generating access_token even if the user is autocreated
+      const token = {
+        id: userLogin.id,
+        user: userLogin.username,
+        email: userLogin.email,
+      };
+      let access_token = createToken(token);
+      res
+        .status(200)
+        .json({ id: userLogin.id, access_token, user: userLogin.username, role: userLogin.role });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = Controller;
