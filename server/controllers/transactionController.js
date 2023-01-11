@@ -18,7 +18,6 @@ class Controller {
           UserId
         }
       });
-      // TODO: cek dengan api docs, bagaimana cara menghandle jika tidak ada data
 
       // Respond with 200 and the transactions data
       res.status(200).json(getAllTransactions);
@@ -79,11 +78,10 @@ class Controller {
         UserId,
         CategoryId: CategoryId,
         WalletId: WalletId
-      }); //TODO: HANDLE ERROR MESSAGE MISSING WALLET DAN MISSING CATEGORY
+      });
 
       // Return the newly created transaction
       res.status(201).json(newTransaction);
-      //TODO: SESUAIKAN API DOC
     } catch (error) {
       next(error);
     }
@@ -125,7 +123,6 @@ class Controller {
 
       // Return the updated transaction
       res.status(200).json(transaction);
-      //TODO: SESUAIKAN API DOC
     } catch (error) {
       next(error);
     }
@@ -148,7 +145,6 @@ class Controller {
 
       // Remove the transaction from the database
       await transaction.destroy();
-      //TODO: ganti jd soft delete pake status
 
       // Return a status of 204 (No Content) to indicate that the operation was successful
       res.status(204).end();

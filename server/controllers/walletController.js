@@ -34,7 +34,6 @@ class Controller {
       
           // Return the newly created transaction
           res.status(201).json(newWallet);
-          //TODO: SESUAIKAN API DOC
         } catch (error) {
           next(error);
         }
@@ -89,7 +88,6 @@ class Controller {
 
       // Return the updated transaction
       res.status(200).json(wallet);
-      //TODO: SESUAIKAN API DOC
     } catch (error) {
       next(error);
     }
@@ -112,7 +110,6 @@ class Controller {
 
       // Remove the transaction from the database
       await wallet.destroy();
-      //TODO: ganti jd soft delete pake status
 
       // Return a status of 204 (No Content) to indicate that the operation was successful
       res.status(204).end();

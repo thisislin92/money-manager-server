@@ -19,16 +19,15 @@ class Controller {
       } = req.body;
 
       const hashedPassword = hashPassword(password)
-      const getAllUsers = await User.create({
+      const createdUser = await User.create({
         name,
         email,
         password: hashedPassword,
-        role: "staff", //TODO: pastiin lg mau pake role apa ga usah
       });
 
-      res.status(201).json({ //TODO: sesuaikan sama api
-        username: getAllUsers.username,
-        email: getAllUsers.email,
+      res.status(201).json({
+        name: createdUser.name,
+        email: createdUser.email,
       });
     } catch (error) {
       next(error);
@@ -76,8 +75,7 @@ class Controller {
       res.status(200).json({
         id: userFromDB.id,
         access_token,
-        user: userFromDB.username,
-        role: userFromDB.role,
+        user: userFromDB.name,
       });
     } catch (error) {
       next(error);

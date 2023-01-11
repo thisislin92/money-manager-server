@@ -42,12 +42,13 @@ passport.use(
         // this is used to pass data from passport to handler in controller, so that express can respond as a JSON object
         req.callbackResponse = {
           id: userLogin.id,
-          accessToken: access_token
+          accessToken: access_token,
+          user: userLogin.name
         };
         return cb(null, {
           id: userLogin.id,
           access_token,
-          name: userLogin.username,
+          name: userLogin.username          ,
         });
       } catch (error) {
         return cb(error, null);
@@ -64,19 +65,6 @@ router.post(
     session: false,
   }),
   Controller.facebookSignIn
-);
-
-router.get(
-  "/users/facebook",
-  passport.authenticate("facebook", { scope: ["email"] })
-);
-router.post(
-  "/users/facebook/callback",
-  passport.authenticate("facebook", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/");
-  }
 );
 
 module.exports = router;

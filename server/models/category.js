@@ -22,5 +22,3 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Category;
 };
-
-// TODO: buat relation nya
