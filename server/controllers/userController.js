@@ -83,6 +83,13 @@ class Controller {
       next(error);
     }
   }
+  static async facebookSignIn(req, res, next) {
+    try {
+      res.json(req.callbackResponse)
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = Controller;
