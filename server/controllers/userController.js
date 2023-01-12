@@ -1,5 +1,6 @@
 const {
-  User
+  User,
+  Wallet
 } = require("../models");
 const {
   compareHash,
@@ -25,8 +26,13 @@ class Controller {
         password: hashedPassword,
       });
 
+      Wallet.create({
+        name: `${email}'s Default Wallet`,
+        UserId: createdUser.id
+      })
+
       res.status(201).json({
-        name: createdUser.name,
+        username: createdUser.username,
         email: createdUser.email,
       });
     } catch (error) {
