@@ -2,5 +2,13 @@
     {
         "name": "Food & Beverages",
         "imageUrl": "https://cdn-icons-png.flaticon.com/512/5141/5141534.png"
+    },
+    {
+        "name": "Transportation",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/5141/5141534.png"
+    },
+    {
+        "name": "Shopping",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/5141/5141534.png"
     }
 ]

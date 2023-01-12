@@ -5,6 +5,25 @@
     "type": "expense",
     "transactionDateTime": "2023-01-11 00:03:09.850 +0700",
     "CategoryId": 1,
-    "WalletId": 1
+    "WalletId": 1,
+    "UserId": 1
+  },
+  {
+    "name": "Transfer Online ke Rekening 77777",
+    "amount": 148494.5,
+    "type": "expense",
+    "transactionDateTime": "2023-01-11 00:03:09.850 +0700",
+    "CategoryId": 2,
+    "WalletId": 1,
+    "UserId": 1
+  },
+  {
+    "name": "Transfer Online ke Rekening 9945845",
+    "amount": 995000,
+    "type": "expense",
+    "transactionDateTime": "2023-01-11 00:03:09.850 +0700",
+    "CategoryId": 3,
+    "WalletId": 1,
+    "UserId": 1
   }
 ]
