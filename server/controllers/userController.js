@@ -91,7 +91,7 @@ class Controller {
     try {
       Wallet.create({
         name: `${req.callbackResponse.user}'s Default Wallet`,
-        UserId: createdUser.id
+        UserId: req.callbackResponse.id
       })
 
       res.json(req.callbackResponse)
