@@ -66,5 +66,6 @@ router.post(
   }),
   Controller.facebookSignIn
 );
+router.get("/users", authentication, Controller.getUserByAccessToken);
 
 module.exports = router;

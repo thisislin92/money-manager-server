@@ -99,6 +99,24 @@ class Controller {
       next(error);
     }
   }
+
+  static async getUserByAccessToken(req, res, next) {
+    try {
+      const userFromDB = await User.findOne({
+        where: {
+          id: req.user.id
+        }
+      })
+
+      res.status(200).json({
+        id: userFromDB.id,
+        user: userFromDB.name,
+        email: userFromDB.email,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = Controller;
