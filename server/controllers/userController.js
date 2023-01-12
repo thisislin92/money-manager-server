@@ -89,6 +89,11 @@ class Controller {
   }
   static async facebookSignIn(req, res, next) {
     try {
+      Wallet.create({
+        name: `${req.callbackResponse.user}'s Default Wallet`,
+        UserId: createdUser.id
+      })
+
       res.json(req.callbackResponse)
     } catch (error) {
       next(error);
