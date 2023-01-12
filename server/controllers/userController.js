@@ -1,5 +1,6 @@
 const {
-  User
+  User,
+  Wallet
 } = require("../models");
 const {
   compareHash,
@@ -25,6 +26,11 @@ class Controller {
         password: hashedPassword,
         role: "staff", //TODO: pastiin lg mau pake role apa ga usah
       });
+
+      Wallet.create({
+        name: `${email}'s Default Wallet`,
+        UserId: getAllUsers.id
+      })
 
       res.status(201).json({ //TODO: sesuaikan sama api
         username: getAllUsers.username,
