@@ -1,7 +1,7 @@
 const NodeCache = require("node-cache");
 // create a cache mechanism, so that we dont always hit CMC api andd reach API limit
 // CMC has a limit of 333 request daily, and 10,000 request monthly
-const cryptoCache = new NodeCache({ stdTTL: 5, checkperiod: 120 });
+const cryptoCache = new NodeCache({ stdTTL: 300, checkperiod: 120 }); // cached for 5 minutes
 
 const axios = require("axios");
 
@@ -25,10 +25,10 @@ class Controller {
         },
       };
       const response = await axios(config)
-      cryptoCache.set("cmc", response);
+      cryptoCache.set("cmc", response.data);
 
       // cryptoCache.set("cmc", response.data);
-      res.status(200).json(response.data);
+      res.status(200).json(response.data.data);
     } catch (error) {
       next(error);
     }
