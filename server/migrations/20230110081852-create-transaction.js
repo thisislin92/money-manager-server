@@ -10,13 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       amount: {
         type: Sequelize.FLOAT,
       },
       type: {
-        type: Sequelize.STRING,
+        type: Sequelize.ENUM("income", "expense"),
+        defaultValue: "expense",
+        allowNull: false,
       },
       transactionDateTime: {
         type: Sequelize.DATE,
@@ -28,7 +30,6 @@ module.exports = {
           key: "id",
       }
     },
-
       CategoryId: {
         type: Sequelize.INTEGER,
         references: {

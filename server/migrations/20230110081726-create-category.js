@@ -15,6 +15,11 @@ module.exports = {
       imageUrl: {
         type: Sequelize.STRING
       },
+      transactionType: {
+        type: Sequelize.ENUM('income', 'expense'),
+        defaultValue: 'expense',
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -1,14 +1,104 @@
 [
     {
+        "id": 1,
         "name": "Food & Beverages",
-        "imageUrl": "https://cdn-icons-png.flaticon.com/512/5141/5141534.png"
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3083/3083183.png",
+        "transactionType": "expense"
     },
     {
+        "id": 2,
         "name": "Transportation",
-        "imageUrl": "https://cdn-icons-png.flaticon.com/512/5141/5141534.png"
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/1516/1516723.png",
+        "transactionType": "expense"
     },
     {
+        "id": 3,
         "name": "Shopping",
-        "imageUrl": "https://cdn-icons-png.flaticon.com/512/5141/5141534.png"
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/809/809178.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 4,
+        "name": "Selling",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3626/3626822.png",
+        "transactionType": "income"
+    },
+    {
+        "id": 5,
+        "name": "Salary",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/4659/4659507.png",
+        "transactionType": "income"
+    },
+    {
+        "id": 6,
+        "name": "Friends and Lovers",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/4334/4334934.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 7,
+        "name": "Cafe",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 8,
+        "name": "Restaurants",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 9,
+        "name": "Jajan",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 10,
+        "name": "Entertainment",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 11,
+        "name": "Fees",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 12,
+        "name": "E Wallet",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 13,
+        "name": "Family",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 14,
+        "name": "Cash Withdrawal",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 15,
+        "name": "Investment",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 16,
+        "name": "Self-care",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/3079/3079038.png",
+        "transactionType": "expense"
+    },
+    {
+        "id": 999,
+        "name": "Uncategorized",
+        "imageUrl": "",
+        "transactionType": "expense"
     }
 ]

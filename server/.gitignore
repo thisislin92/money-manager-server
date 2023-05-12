@@ -1,1 +1,7 @@
 node_modules
+*.pdf
+output
+
+config/config.k3s.json
+
+data/transaction.json

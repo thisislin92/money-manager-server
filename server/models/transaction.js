@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Transaction.init({
-    name: DataTypes.STRING,
+    name: DataTypes.TEXT,
     amount: DataTypes.FLOAT,
     type: DataTypes.STRING,
     transactionDateTime: DataTypes.DATE,

@@ -1,5 +1,11 @@
 [
     {
+        "id": 1,
+        "name": "Main Wallet",
+        "UserId": 1
+    },
+    {
+        "id": 2,
         "name": "Emergency Fund",
         "UserId": 1
     }
